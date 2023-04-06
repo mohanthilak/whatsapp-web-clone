@@ -80,7 +80,7 @@ const ChatInput = ({
 				onKeyDown={detectEnterPress}
 			/>
 			{newMessage ? (
-				<button aria-label="Send message" onClick={submitNewMessage}>
+				<button aria-label="Send message" onClick={()=>submitNewMessage()}>
 					<Icon id="send" className="chat__input-icon" />
 				</button>
 			) : (

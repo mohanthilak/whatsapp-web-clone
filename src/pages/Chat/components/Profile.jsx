@@ -30,9 +30,9 @@ const Profile = ({ user }) => {
 		<div className="profile">
 			<div className="profile__section profile__section--personal">
 				<div className="profile__avatar-wrapper">
-					<img src={user.profile_picture} alt={user.name} className="avatar" />
+					<img src={user?.profile_picture} alt={"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"} className="avatar" />
 				</div>
-				<h2 className="profile__name"> {user.name} </h2>
+				<h2 className="profile__name"> {user?.name} </h2>
 			</div>
 
 			<div className="profile__section profile__section--media">

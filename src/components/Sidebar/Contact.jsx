@@ -13,27 +13,31 @@ const Contact = ({ contact }) => {
 		const lastMessage = messages.pop();
 		return lastMessage;
 	};
+	// console.log(contact)
 
-	const lastMessage = getLastMessage(contact);
+	// const lastMessage = getLastMessage(contact);
+	const lastMessage={}
 
 	return (
 		<Link
 			className="sidebar-contact"
-			to={`/chat/${contact.id}`}
-			onClick={() => setUserAsUnread(contact.id)}
+			state={{ contact }}
+			
+			to={{pathname: `/chat/${contact.user_id._id}`, state: {contact}}}
+			// onClick={() => setUserAsUnread(contact.user_id._id)}
 		>
 			<div className="sidebar-contact__avatar-wrapper">
 				<img
-					src={contact.profile_picture}
-					alt={contact.profile_picture}
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
+					alt="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
 					className="avatar"
 				/>
 			</div>
 			<div className="sidebar-contact__content">
 				<div className="sidebar-contact__top-content">
-					<h2 className="sidebar-contact__name"> {contact.name} </h2>
+					<h2 className="sidebar-contact__name"> {contact.user_id.mobile_no}</h2>
 					<span className="sidebar-contact__time">
-						{formatTime(lastMessage.time)}
+						{/* {formatTime(lastMessage.time)} */}
 					</span>
 				</div>
 				<div className="sidebar-contact__bottom-content">

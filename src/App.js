@@ -5,6 +5,7 @@ import Loader from "./components/Loader";
 import Home from "./pages/Home";
 import Sidebar from "components/Sidebar";
 import Chat from "pages/Chat";
+import SendBulk from "pages/SendBulk/SendBulk";
 
 const userPrefersDark =
 	window.matchMedia &&
@@ -34,6 +35,7 @@ function App() {
 					<Sidebar />
 					<Switch>
 						<Route path="/chat/:id" component={Chat} />
+						<Route path="/send-bulk" component={SendBulk} />
 						<Route component={Home} />
 					</Switch>
 				</div>
